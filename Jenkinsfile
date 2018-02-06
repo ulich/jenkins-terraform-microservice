@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 library identifier: 'jenkins-lib@master', retriever: modernSCM(github(
-        //credentialsId: '<id of the github credentials of jenkins if private repo>',
+        credentialsId: 'github', //<id of the github credentials of jenkins>
         repoOwner: 'ulich',
         repository: 'jenkins-pipeline-library'
 ))
