@@ -2,7 +2,7 @@ variable "app_name" {
 }
 
 variable "region" {
-    default = "eu-east-1"
+    default = "us-east-1"
 }
 
 
@@ -13,8 +13,8 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "dip-infrastructure"
-    key = "terraform-states/${var.app_name}.tfstate"
+    key = "terraform-states/coffee-service.tfstate"
     encrypt = false
-    region = "${var.region}"
+    region = "us-east-1"
   }
 }
