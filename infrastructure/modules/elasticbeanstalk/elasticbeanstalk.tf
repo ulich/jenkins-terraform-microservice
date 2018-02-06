@@ -7,7 +7,7 @@ resource "aws_elastic_beanstalk_application" "application" {
 resource "aws_elastic_beanstalk_environment" "environment" {
   name                = "${var.app_name}"
   application         = "${aws_elastic_beanstalk_application.application.name}"
-  solution_stack_name = "Amazon Linux 2017.09 v2.6.1 mit 64 Bit und Java 8"
+  solution_stack_name = "64bit Amazon Linux 2017.09 v2.6.5 running Java 8"
   tier                = "WebServer"
 
   setting {
