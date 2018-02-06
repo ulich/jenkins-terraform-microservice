@@ -15,4 +15,10 @@ resource "aws_elastic_beanstalk_environment" "environment" {
     name = "SERVER_PORT"
     value = "5000"
   }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name = "LowerThreshold"
+    value = "1000"
+  }
 }
