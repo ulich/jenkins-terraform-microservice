@@ -15,6 +15,6 @@ terraform {
     bucket = "dip-infrastructure"
     key = "terraform-states/coffee-service.tfstate"
     encrypt = false
-    region = "us-east-1"
+    region = "eu-central-1"
   }
 }
