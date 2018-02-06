@@ -1,4 +1,4 @@
 module "app" {
   source   = "modules/elasticbeanstalk"
-  app_name = "${app_name}"
+  app_name = "${var.app_name}"
 }
