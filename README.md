@@ -71,8 +71,3 @@ in this folder.
 You are maybe wondering where the provider or S3 state bucket configuration is. It is generated
 by the [Jenkins pipeline#generateTerraformConfig method](https://github.com/ulich/jenkins-pipeline-library/blob/master/vars/microservice.groovy#L62)
 in order to reduce the boilerplate needed in each microservice.
-
-
-## TODOs
-
-* move terraform modules into own repo
