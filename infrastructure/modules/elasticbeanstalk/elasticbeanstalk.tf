@@ -6,6 +6,7 @@ resource "aws_elastic_beanstalk_application" "application" {
 }
 
 resource "aws_elastic_beanstalk_environment" "environment" {
+  depends_on          = ["aws_elastic_beanstalk_application.application"]
   name                = "${var.app_name}-${local.workspace["environment_name"]}"
   application         = "${var.app_name}"
   solution_stack_name = "64bit Amazon Linux 2017.09 v2.6.5 running Java 8"
