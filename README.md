@@ -40,8 +40,10 @@ build_app
 terraform init
 terraform workspace select default
 terraform plan -out staging-planfile
-wait_for_approval "check the console output of the terraform plan"
-terraform apply staging-planfile
+if (staging-planfile contains changes) {
+    wait_for_approval "check the console output of the terraform plan"
+    terraform apply staging-planfile
+}
 eb deploy
 
 
@@ -53,8 +55,10 @@ wait_for_approval "check that staging still works"
 
 terraform workspace select prod
 terraform plan -out prod-planfile
-wait_for_approval "check the console output of the terraform plan"
-terraform apply prod-planfile
+if (prod-planfile contains changes) {
+    wait_for_approval "check the console output of the terraform plan"
+    terraform apply prod-planfile
+}
 eb deploy
 ```
 
